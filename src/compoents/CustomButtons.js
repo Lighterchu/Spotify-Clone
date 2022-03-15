@@ -22,6 +22,11 @@ const CustomButtonStyle = styled.button`
     width: 20%;
     height: 10%;
 
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+
     justify-content: center;
     /* background: #28A7EF;; */
 ;`

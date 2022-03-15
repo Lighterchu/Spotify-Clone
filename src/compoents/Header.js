@@ -19,9 +19,6 @@ const TitleBox = styled.div`
 
     justify-content: center;
     background: #BD0DC0;
-;
-    
-
 `;
 
 const Title = styled.h1`

@@ -12,10 +12,11 @@ export const Musicinfo = () =>  (
 
 const MusicInfoBox = styled.div`
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 50.7%;
+    height: 60%;
 
-    top: 15%;
+    top: 20%;
+    left: 13%;
 
     justify-content: center;
     background: #EA2626;

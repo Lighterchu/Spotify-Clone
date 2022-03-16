@@ -24,7 +24,7 @@ const SidebarBox = styled.div`
     
 
     /* justify-content: center; */
-    background: #BD0DC0;
+    background: lightblue;
 ;`
     
 

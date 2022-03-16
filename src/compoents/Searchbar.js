@@ -19,7 +19,7 @@ const SearBarBox = styled.div`
     height: 10%;
 
     left: 13% ;
-    top: 7vh ;
+    top: 8vh ;
 
     justify-content: center;
     background: #EA2626;
@@ -33,8 +33,8 @@ const SearchBar  = styled.input`
      text-align: center;
      font-size: 28px;
 
-     color: white;
+     color: black;
 
-     background: red;
+     background: lightblue;
  ;`
     

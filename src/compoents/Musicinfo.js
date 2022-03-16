@@ -19,7 +19,7 @@ const MusicInfoBox = styled.div`
     left: 13%;
 
     justify-content: center;
-    background: #EA2626;
+    background: lightblue;
 ;`
    
 const MusicListBox = styled.div`
@@ -31,6 +31,6 @@ const MusicListBox = styled.div`
     left: 2%;
 
     justify-content: center;
-    background: #28A7EF;;
+    background: black;
 ;`
     

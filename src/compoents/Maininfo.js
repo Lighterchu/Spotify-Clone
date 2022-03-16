@@ -18,13 +18,13 @@ export const Maininfo = () =>  {
             
             <CustomButtons 
                     title={"Add Song"} 
-                    colorText={"Green"}  
+                    colorText={"lightblue"}  
                     posX={'13%'}
                     posY={'80%'}
                 />
                 <CustomButtons 
                     title={"Remove Song"} 
-                    colorText={"Green"} 
+                    colorText={"lightblue"} 
                     posX={'35%'} 
                     posY={'80%'}
                 />

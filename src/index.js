@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Login } from './Views/Login';
+import App  from './App';
 
 
 
 ReactDOM.render(
-  <Login />,
+  <App />,
   document.getElementById('root')
 );
 

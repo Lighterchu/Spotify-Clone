@@ -1,33 +1,59 @@
-import React from "react"
+import React, {useState,useEffect} from "react"
 import styled from 'styled-components';
 import { Searchbar } from "./Searchbar";
 import { Musicinfo } from "./Musicinfo";
 import { CustomButtons } from "./CustomButtons";
 import {Header} from './Header';
 import {Sidebar} from './Sidebar';
+import SpotifyWebApi from "spotify-web-api-node"
+
+const spotifyApi = new SpotifyWebApi({
+    clientId: "3e8375a239cf4b5b9b7d0c7cf7b577ce",
+    clientSecret: '5e23120d2d4c40ec801d144792006d2f',
+  })
+
+export const Maininfo = ({logged}) =>  {
+   
+    const [token, setToken] = useState("");
+    const [data, setData] = useState({});
+
+    useEffect(() =>{
+        console.log(localStorage.getItem('access_token'));
+        if(localStorage.getItem('access_token')){
+            setToken(localStorage.getItem('access_token'))
+            spotifyApi.setAccessToken(token)
+        }
+    },[token])
+
+   
+    console.log(` the token is getting passed ${token}`)
+    const handlePlayList = () => {
+       console.log("we are working")
+       spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")
+       .then(playlist => setData(playlist))
+    }
+    // https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=cc3a2e0bfb024f0b
+    
+    
 
 
-export const Maininfo = () =>  {
     return (
         <>
         <MainBox>
-            <Header title={"Spotify Clone"}/>
+            <Header title={"Spotify Clone"} userLoggedIn={logged}/>
             <Searchbar />
             <Sidebar />
-            <Musicinfo />
+            <Musicinfo playList={data} />
             
-            <CustomButtons 
-                    title={"Add Song"} 
-                    colorText={"lightblue"}  
-                    posX={'13%'}
-                    posY={'80%'}
-                />
-                <CustomButtons 
-                    title={"Remove Song"} 
+           
+                  <CustomButtons 
+                    title={"Show Songs"} 
                     colorText={"lightblue"} 
-                    posX={'35%'} 
+                    posX={'57%'} 
                     posY={'80%'}
+                    action={handlePlayList}
                 />
+                
             </MainBox>
         </>
     )

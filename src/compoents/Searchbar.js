@@ -2,20 +2,18 @@ import React from "react"
 import styled from 'styled-components';
 
 
+
 export const Searchbar = () =>  (
     <SearBarBox>
-       {/* <input placeholder="Enter a song "/> */}
        <SearchBar
-       placeholder="Enter a song here ">
-
-       </SearchBar>
-       
+        placeholder="Enter a song here ">
+      </SearchBar>
     </SearBarBox>
 )
 
 const SearBarBox = styled.div`
   position: absolute;
-    width: 50%;
+    width: 70%;
     height: 10%;
 
     left: 13% ;

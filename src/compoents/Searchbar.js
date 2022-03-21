@@ -3,13 +3,17 @@ import styled from 'styled-components';
 
 
 
-export const Searchbar = () =>  (
+export const Searchbar = () =>  {
+  
+  return (
     <SearBarBox>
-       <SearchBar
-        placeholder="Enter a song here ">
+      <SearchBar
+          placeholder="Enter a song here ">
       </SearchBar>
     </SearBarBox>
-)
+  )
+ 
+}
 
 const SearBarBox = styled.div`
   position: absolute;

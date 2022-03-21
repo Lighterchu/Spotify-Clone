@@ -1,10 +1,10 @@
 import React from 'react'
-import {CustomButtons} from './CustomButtons'
 import styled from 'styled-components';
 
 export  const TrackList = ({name}) => {
   return (
    <div>
+     {/* playList["body"].tracks.items[2]["track"].name */}
        <li>{name}</li>
     </div>
   )

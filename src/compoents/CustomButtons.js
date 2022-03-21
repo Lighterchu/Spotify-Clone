@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 
 export const CustomButtons = ({title, colorText, posX, posY, btnWidth, btnHeight,action}) =>  {
-
-    console.log(btnWidth)
     return (
         <CustomButtonStyle
         BackGroundColor={colorText}

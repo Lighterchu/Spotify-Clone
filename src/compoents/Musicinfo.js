@@ -5,37 +5,25 @@ import {TrackList} from './TrackList'
 
 
 export const Musicinfo = ({playList}) =>  {
-    // console.log(playList["body"].tracks.items[3]["track"].name)
+    // if (playList === object.keys(playList).length === 0 ){ console.log("this is a empty table")}
+    
+    let trackName = "loading"
+    if(playList && playList["body"] && playList["body"].tracks && playList["body"].tracks.items) {
+        trackName = playList["body"].tracks.items[2]["track"].name
+    }
     return ( 
     <MusicInfoBox>
         
         <PlayListTitle>Your Play List {"#Hardstyle bangers"}</PlayListTitle>
         <MusicListBox>
-            <TrackList name={playList["body"].tracks.items[1]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[2]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[3]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[4]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[5]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[6]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[7]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[8]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[9]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[10]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[11]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[12]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[13]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[14]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[15]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[16]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[17]["track"].name} />
-            <TrackList name={playList["body"].tracks.items[18]["track"].name} />
-           
-       
+            <TrackList name={trackName}/> 
+    
         </MusicListBox>
     </MusicInfoBox>
     )
    
 }
+
 
 const MusicInfoBox = styled.div`
     position: absolute;

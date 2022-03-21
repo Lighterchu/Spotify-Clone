@@ -22,15 +22,15 @@ export const Maininfo = ({logged}) =>  {
         if(localStorage.getItem('access_token')){
             setToken(localStorage.getItem('access_token'))
             spotifyApi.setAccessToken(token)
-        }
+            }
     },[token])
 
    
     console.log(` the token is getting passed ${token}`)
     const handlePlayList = () => {
-       console.log("we are working")
-       spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")
-       .then(playlist => setData(playlist))
+        console.log("we are working")
+            spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")
+            .then(playlist => setData(playlist))
     }
     // https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=cc3a2e0bfb024f0b
     

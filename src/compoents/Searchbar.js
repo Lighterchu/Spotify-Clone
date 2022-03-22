@@ -3,15 +3,21 @@ import styled from 'styled-components';
 
 
 
-export const Searchbar = ({searchSongs}) =>  {
+export const Searchbar = ({onDataPassEvent,posX, posY, btnWidth, btnHeight, title, colorText}) =>  {
   
-
   
   return (
-    <SearBarBox>
+    <SearBarBox
+          PostionX={posX}
+          PostionY={posY}
+          btnWidth={btnWidth}
+          btnHeight={btnHeight}>
       <SearchBar
-          onKeyUp={searchSongs}
-          placeholder="Enter a song here ">
+          onKeyUp={onDataPassEvent ? onDataPassEvent : console.log("Addevent to me ")}
+          BackGroundColor={colorText}
+          placeholder={title ? title : "search song"}
+          >
+          
       </SearchBar>
     </SearBarBox>
   )
@@ -20,11 +26,13 @@ export const Searchbar = ({searchSongs}) =>  {
 
 const SearBarBox = styled.div`
   position: absolute;
-    width: 70%;
-    height: 10%;
+    
+  top:${props => props.PostionY ? props.PostionY : '8vh'};
+  left: ${props => props.PostionX ? props.PostionX : "13%"};
+  width: ${props => props.btnWidth ? props.btnWidth : "70%"};
+  height: ${props => props.btnHeight ? props.btnHeight : "10%"};
+  background: ${props => props.BackGroundColor ? props.BackGroundColor : "white"};
 
-    left: 13% ;
-    top: 8vh ;
 
     justify-content: center;
     background: #EA2626;

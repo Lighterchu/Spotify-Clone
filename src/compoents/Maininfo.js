@@ -17,6 +17,7 @@ export const Maininfo = ({logged}) =>  {
     const [token, setToken] = useState("");
     const [data, setData] = useState({});
     const [filteredData, setFilteredData] = useState({});
+    const [playlist, setPlayListData] = useState({});
 
     useEffect(() =>{
         console.log(localStorage.getItem('access_token'));
@@ -38,10 +39,30 @@ export const Maininfo = ({logged}) =>  {
             })
     }
 
+    const handleNewPlayList = (event) => {
+        if(playlist){
+            spotifyApi.getPlaylist(playlist)
+            .then(playlist =>  {
+                let tracks = playlist.body.tracks.items.map((item) => item.track);
+                setData(tracks);  
+                setFilteredData(tracks);
+            })
+        }
+        else {
+            console.log("please add a playlist Id")
+        }
+    }
+
     const searchSongs = (event) => {
         let songName = event.target.value;
         setFilteredData(data.filter((track) => track.name.toLowerCase().startsWith(songName)));
     } 
+
+    const searchPlayList = (event) => {
+      let newPlayList = event.target.value
+      setPlayListData(newPlayList)
+    } 
+
 
     // https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=cc3a2e0bfb024f0b
     
@@ -52,12 +73,30 @@ export const Maininfo = ({logged}) =>  {
         <>
         <MainBox>
             <Header title={"Spotify Clone"} userLoggedIn={logged}/>
-            <Searchbar searchSongs={searchSongs}/>
+            <Searchbar onDataPassEvent={searchSongs}/>
+            <Searchbar 
+            onDataPassEvent={searchPlayList}
+                posX={'85%'} 
+                posY={'8vh'}
+                btnWidth={"13%"}
+                btnHeight={"10%"}
+                title={"Enter Playlist"}
+            />
+            <CustomButtons 
+                    title={"Grab new Playlist"} 
+                    colorText={"lightblue"} 
+                    posX={'85%'} 
+                    posY={'20%'}
+                    btnWidth={"13%"}
+                    btnHeight={"10%"}
+                    action={handleNewPlayList}
+                />
+
             <Sidebar />
             <Musicinfo playList={filteredData} />
             
            
-                  <CustomButtons 
+                <CustomButtons 
                     title={"Show Songs"} 
                     colorText={"lightblue"} 
                     posX={'57%'} 

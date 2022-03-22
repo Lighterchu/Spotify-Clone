@@ -6,7 +6,7 @@ import {TrackList} from './TrackList'
 
 
 export const Musicinfo = ({playList}) =>  {
-    // if (playList === object.keys(playList).length === 0 ){ console.log("this is a empty table")}
+    console.log(playList)
     let allTracks = []
     let holdAllTrackNames = []
     let trackName = "loading"
@@ -14,15 +14,9 @@ export const Musicinfo = ({playList}) =>  {
    const genrateTracks = () => {
         if(playList && Object.keys(playList).length > 0) {
            return playList.map((track) => {           
-               return <TrackList name={track.name} trackHref={track.href}/>
+               return <TrackList name={track.name} trackHref={track.id}/>
            })
        }
-    }
-
-//    return movieData.map((movies,index) => <MovieCard key={index}content={movies}/>)
-    if(playList && playList["body"] && playList["body"].tracks && playList["body"].tracks.items) {
-      
-        // trackName = playList["body"].tracks.items[2]["track"].name
     }
     return ( 
     <MusicInfoBox>

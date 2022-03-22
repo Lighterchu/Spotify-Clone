@@ -5,10 +5,17 @@ import { accessUrl } from "../Helpers/spotifyLogic";
 
  export const Login = () => {
   return (
-    <>
-     <h1>this is the login page</h1>
-     <a href={accessUrl}>log in</a>
-    </>
+    <TitleBox>
+        <h1>Login Page</h1>
+        <p>this site is for testing and personal use, I will not be making money off this page.</p>
+     <img
+        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
+        alt=""
+      />
+     <a href={accessUrl}>Login to Spotify</a>
+    </TitleBox>
+     
+    
   )
 }
 
@@ -21,10 +28,10 @@ const TitleBox = styled.div`
     margin-top: 10% ;
     margin-left: 20% ;
 
-    color: red ;
+    color: white ;
 
     justify-content: center;
-    background: #BD0DC0;
+    /* background: #BD0DC0; */
 
   
 `;

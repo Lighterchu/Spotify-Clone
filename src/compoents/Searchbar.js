@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 
 
-export const Searchbar = () =>  {
+export const Searchbar = ({searchSongs}) =>  {
+  
+
   
   return (
     <SearBarBox>
       <SearchBar
+          onKeyUp={searchSongs}
           placeholder="Enter a song here ">
       </SearchBar>
     </SearBarBox>

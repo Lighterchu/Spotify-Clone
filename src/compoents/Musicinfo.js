@@ -10,19 +10,14 @@ export const Musicinfo = ({playList}) =>  {
     let allTracks = []
     let holdAllTrackNames = []
     let trackName = "loading"
-    
-    
 
    const genrateTracks = () => {
-    if(playList && playList["body"]){
-        allTracks = playList["body"].tracks.items
-       
-        console.log(playList["body"])
-       return allTracks.map((alltracks) => 
-            <TrackList name={alltracks.track.name}/>
-        )
+        if(playList && Object.keys(playList).length > 0) {
+           return playList.map((track) => {           
+               return <TrackList name={track.name} trackHref={track.href}/>
+           })
+       }
     }
-   }
 
 //    return movieData.map((movies,index) => <MovieCard key={index}content={movies}/>)
     if(playList && playList["body"] && playList["body"].tracks && playList["body"].tracks.items) {

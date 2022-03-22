@@ -16,6 +16,7 @@ export const Maininfo = ({logged}) =>  {
    
     const [token, setToken] = useState("");
     const [data, setData] = useState({});
+    const [filteredData, setFilteredData] = useState({});
 
     useEffect(() =>{
         console.log(localStorage.getItem('access_token'));
@@ -30,8 +31,18 @@ export const Maininfo = ({logged}) =>  {
     const handlePlayList = () => {
         console.log("we are working")
             spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")
-            .then(playlist => setData(playlist))
+            .then(playlist =>  {
+                let tracks = playlist.body.tracks.items.map((item) => item.track);
+                setData(tracks);  
+                setFilteredData(tracks);
+            })
     }
+
+    const searchSongs = (event) => {
+        let songName = event.target.value;
+        setFilteredData(data.filter((track) => track.name.toLowerCase().startsWith(songName)));
+    } 
+
     // https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=cc3a2e0bfb024f0b
     
     
@@ -41,9 +52,9 @@ export const Maininfo = ({logged}) =>  {
         <>
         <MainBox>
             <Header title={"Spotify Clone"} userLoggedIn={logged}/>
-            <Searchbar />
+            <Searchbar searchSongs={searchSongs}/>
             <Sidebar />
-            <Musicinfo playList={data} />
+            <Musicinfo playList={filteredData} />
             
            
                   <CustomButtons 

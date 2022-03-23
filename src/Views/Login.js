@@ -12,8 +12,9 @@ import { accessUrl } from "../Helpers/spotifyLogic";
         src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt=""
       />
-     <a href={accessUrl}>Login to Spotify</a>
+      <a href={accessUrl} style={{background: "green", borderRadius: "5%", width: "20%"}}>Login to Spotify</a>
     </TitleBox>
+    
      
     
   )
@@ -21,9 +22,10 @@ import { accessUrl } from "../Helpers/spotifyLogic";
 
 const TitleBox = styled.div`
   position: absolute;
-    width: 58%;
-    height: 40px;
+    width: 45%;
+    height: 60%;
     padding-bottom: 15px;
+    
 
     margin-top: 10% ;
     margin-left: 20% ;

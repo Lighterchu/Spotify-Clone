@@ -21,14 +21,21 @@ export const Maininfo = ({logged}) =>  {
 
     useEffect(() =>{
         console.log(localStorage.getItem('access_token'));
-        if(localStorage.getItem('access_token')){
-            setToken(localStorage.getItem('access_token'))
-            spotifyApi.setAccessToken(token)
+            if(localStorage.getItem('access_token')){
+                setToken(localStorage.getItem('access_token'))
+                spotifyApi.setAccessToken(token)
             }
     },[token])
-
+    // useEffect(() => {
+    //     spotifyApi.getMe()
+    //     .then(data => {
+    //         console.log('Some information about the authenticated user', data.body);
+    //     })
+    //     .catch(err =>  {
+    //         console.log('Something went wrong!', err);
+    //     });
+    // },[])
    
-    console.log(` the token is getting passed ${token}`)
     const handlePlayList = () => {
         console.log("we are working")
             spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")

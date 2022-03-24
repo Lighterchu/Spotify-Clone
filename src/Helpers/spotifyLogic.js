@@ -1,6 +1,6 @@
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize'
 const CLIENT_ID = '3e8375a239cf4b5b9b7d0c7cf7b577ce'
-const REDIRECT_URL = 'http://localhost:3000/'
+const REDIRECT_URL = 'https://bennyboy743.github.io/Spotify-Clone/'
 const scopes = [
   "user-read-currently-playing",
   "user-read-recently-played",

@@ -18,9 +18,9 @@ function App() {
     return !token ? (<Login logged={token}/>) : (
         <>
         <Maininfo />
-            <Router>
+            {/* <Router>
             
-            </Router>
+            </Router> */}
         </>
     );
   }

@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 
 export const Searchbar = ({onDataPassEvent,posX, posY, btnWidth, btnHeight, title, colorText}) =>  {
-  
-  
+
+    // TODO:make sure this is it own logic
+    //  onDataPassEvent ? onDataPassEvent : console.log("Addevent to me ")
+
   return (
     <SearBarBox
           PostionX={posX}

@@ -4,7 +4,7 @@ export const Header = ({title,userLoggedIn}) =>  {
     return (
         <TitleBox>
             <Title>{title}</Title>
-            <button>{!userLoggedIn ? "login" : "logout"}</button>
+            {/* <button>{!userLoggedIn ? "login" : "logout"}</button> */}
         </TitleBox>
     )
 }

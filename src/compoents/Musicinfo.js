@@ -6,11 +6,6 @@ import {TrackList} from './TrackList'
 
 
 export const Musicinfo = ({playList}) =>  {
-    console.log(playList)
-    let allTracks = []
-    let holdAllTrackNames = []
-    let trackName = "loading"
-
    const genrateTracks = () => {
         if(playList && Object.keys(playList).length > 0) {
            return playList.map((track) => {           
@@ -20,16 +15,12 @@ export const Musicinfo = ({playList}) =>  {
     }
     return ( 
     <MusicInfoBox>
-        
         <PlayListTitle>Your Play List {"#Hardstyle bangers"}</PlayListTitle>
         <MusicListBox>
-            
             {genrateTracks()}
-    
         </MusicListBox>
     </MusicInfoBox>
     )
-   
 }
 
 

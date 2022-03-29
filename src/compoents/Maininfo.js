@@ -26,16 +26,6 @@ export const Maininfo = ({logged}) =>  {
                 spotifyApi.setAccessToken(token)
             }
     },[token])
-    // useEffect(() => {
-    //     spotifyApi.getMe()
-    //     .then(data => {
-    //         console.log('Some information about the authenticated user', data.body);
-    //     })
-    //     .catch(err =>  {
-    //         console.log('Something went wrong!', err);
-    //     });
-    // },[])
-   
     const handlePlayList = () => {
         console.log("we are working")
             spotifyApi.getPlaylist("37i9dQZF1DX0pH2SQMRXnC")
@@ -45,7 +35,6 @@ export const Maininfo = ({logged}) =>  {
                 setFilteredData(tracks);
             })
     }
-
     const handleNewPlayList = (event) => {
         if(playlist){
             spotifyApi.getPlaylist(playlist)
@@ -59,23 +48,14 @@ export const Maininfo = ({logged}) =>  {
             console.log("please add a playlist Id")
         }
     }
-
     const searchSongs = (event) => {
         let songName = event.target.value;
         setFilteredData(data.filter((track) => track.name.toLowerCase().startsWith(songName)));
     } 
-
     const searchPlayList = (event) => {
       let newPlayList = event.target.value
       setPlayListData(newPlayList)
     } 
-
-
-    // https://open.spotify.com/playlist/37i9dQZF1DX0pH2SQMRXnC?si=cc3a2e0bfb024f0b
-    
-    
-
-
     return (
         <>
         <MainBox>
@@ -101,8 +81,6 @@ export const Maininfo = ({logged}) =>  {
 
             <Sidebar />
             <Musicinfo playList={filteredData} />
-            
-           
                 <CustomButtons 
                     title={"Show Songs"} 
                     colorText={"lightblue"} 
@@ -110,7 +88,6 @@ export const Maininfo = ({logged}) =>  {
                     posY={'80%'}
                     action={handlePlayList}
                 />
-                
             </MainBox>
         </>
     )
@@ -121,13 +98,8 @@ const MainBox = styled.div`
     width: 100%;
     height: 100%;
 
-    /* top: 2%;
-    left: 2%; */
-    
-   
-
     justify-content: center;
-    /* background: #BD0DC0; */
+    
 ;`
    
 

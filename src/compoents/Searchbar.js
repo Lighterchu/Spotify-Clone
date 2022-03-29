@@ -17,7 +17,6 @@ export const Searchbar = ({onDataPassEvent,posX, posY, btnWidth, btnHeight, titl
           BackGroundColor={colorText}
           placeholder={title ? title : "search song"}
           >
-          
       </SearchBar>
     </SearBarBox>
   )

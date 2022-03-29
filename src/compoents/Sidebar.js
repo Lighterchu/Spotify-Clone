@@ -20,10 +20,6 @@ const SidebarBox = styled.div`
     height: 100%;
     top: 5.7vh;
 
-    
-    
-
-    /* justify-content: center; */
     background: lightblue;
 ;`
     

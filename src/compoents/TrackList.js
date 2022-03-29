@@ -9,16 +9,16 @@ export  const TrackList = ({name, trackHref}) => {
         active: true
     })
     
-    const addingSongs = () => {
-        console.log("adding a song")
-    }
-    const removeSong = (e) => {
-        console.log("Removing Song", e)
-        console.log(name)
-        setTrack({name: "", active: false})
+    // const addingSongs = () => {
+    //     console.log("adding a song")
+    // }
+    // const removeSong = (e) => {
+    //     console.log("Removing Song", e)
+    //     console.log(name)
+    //     setTrack({name: "", active: false})
         
        
-    }
+    // }
     
     let displayProp;
     if(listTrack.active) {
@@ -34,7 +34,7 @@ export  const TrackList = ({name, trackHref}) => {
                 <iframe className="border-radius:12px" src={`https://open.spotify.com/embed/track/${trackHref}?utm_source=generator`} width="40%" height="80" frameBorder="0"></iframe>
                 <p>hit play to get preview of track</p>
                 {/* <button onClick={addingSongs} >Add song</button>  */}
-                <button onClick={removeSong}>Remove song</button> 
+                {/* <button onClick={removeSong}>Remove song</button>  */}
             </div>
       </div>
    

@@ -20,11 +20,17 @@ function App() {
     return !token ? (<Login logged={login}/>) : (
         <>
         <Maininfo />
+
+            {/* <Router>
+            
+            </Router> */}
+
             <Router>
                 <Routes path="/test" element={<Login  />}/>
 
                 
             </Router>
+
         </>
     );
   }

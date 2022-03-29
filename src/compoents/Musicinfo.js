@@ -6,10 +6,9 @@ import {TrackList} from './TrackList'
 
 
 export const Musicinfo = ({playList}) =>  {
-    console.log(playList)
-    let allTracks = []
-    let holdAllTrackNames = []
-    let trackName = "loading"
+    // let allTracks = []
+    // let holdAllTrackNames = []
+    // let trackName = "loading"
 
    const genrateTracks = () => {
         if(playList && Object.keys(playList).length > 0) {

@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
 
     const [token, setToken] = useState("")
+    const [login, setLoging] = useState(false)
     
 
     useEffect(() => {
@@ -14,13 +15,22 @@ function App() {
         const _token = hash.split("&")[0].split("=")[1];
         window.localStorage.setItem("access_token",_token)
         setToken(_token)
+        setLoging(true)
     },[])
-    return !token ? (<Login logged={token}/>) : (
+    return !token ? (<Login logged={login}/>) : (
         <>
         <Maininfo />
+
             {/* <Router>
             
             </Router> */}
+
+            <Router>
+                <Routes path="/test" element={<Login  />}/>
+
+                
+            </Router>
+
         </>
     );
   }
